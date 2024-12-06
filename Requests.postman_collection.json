@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "6c5d06e9-1f43-4aae-b9da-fe947f5e588f",
+		"name": "Northwind API Requests",
+		"description": "Requests for retrieving data from the Northwind OData API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve Orders with Customer Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/northwind/northwind.svc/Orders?$format=json&$expand=Customer",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"northwind",
+						"northwind.svc",
+						"Orders"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$expand",
+							"value": "Customer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Employees Reporting to Manager with ID 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/northwind/northwind.svc/Employees?$format=json&$filter=ReportsTo%20eq%202",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"northwind",
+						"northwind.svc",
+						"Employees"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$filter",
+							"value": "ReportsTo%20eq%202"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Products with Stock Available",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/northwind/northwind.svc/Products?$format=json&$filter=UnitsInStock gt 0",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"northwind",
+						"northwind.svc",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$filter",
+							"value": "UnitsInStock gt 0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Names and Codes of Products Out of Stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/northwind/northwind.svc/Products?$format=json&$filter=UnitsInStock%20eq%200&$select=ProductName,ProductID",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"northwind",
+						"northwind.svc",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$filter",
+							"value": "UnitsInStock%20eq%200"
+						},
+						{
+							"key": "$select",
+							"value": "ProductName,ProductID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve the Top 5 Most Expensive Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/northwind/northwind.svc/Products?$format=json&$orderby=UnitPrice desc&$top=5",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"northwind",
+						"northwind.svc",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$orderby",
+							"value": "UnitPrice desc"
+						},
+						{
+							"key": "$top",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Orders Shipped to Germany",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/northwind/northwind.svc/Orders?$format=json&$filter=ShipCountry%20eq%20'Germany'",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"northwind",
+						"northwind.svc",
+						"Orders"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$filter",
+							"value": "ShipCountry%20eq%20'Germany'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Names and Prices of Products Shipped to Germany",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/northwind/northwind.svc/Order_Details?$format=json&$expand=Product&$filter=Order/ShipCountry%20eq%20'Germany'&$select=Product/ProductName,Product/UnitPrice",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"northwind",
+						"northwind.svc",
+						"Order_Details"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$expand",
+							"value": "Product"
+						},
+						{
+							"key": "$filter",
+							"value": "Order/ShipCountry%20eq%20'Germany'"
+						},
+						{
+							"key": "$select",
+							"value": "Product/ProductName,Product/UnitPrice"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
