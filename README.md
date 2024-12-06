@@ -90,7 +90,7 @@ These exercises are part of the tasks for Week 2 of Globant's SAP CAP Bootcamp.
     https://services.odata.org/northwind/northwind.svc/Order_Details?$format=json&$expand=Product&$filter=Order/ShipCountry%20eq%20'Germany'&$select=Product/ProductName,Product/UnitPrice
 
 
-### Explanation:
+#### Explanation:
 
 - $expand=Product: Includes related product information in the response, allowing access to product details like name and price.
 - $filter=Order/ShipCountry eq 'Germany': Filters the Order_Details dataset to include only those orders whose associated ShipCountry is Germany.
