@@ -83,18 +83,19 @@ These exercises are part of the tasks for Week 2 of Globant's SAP CAP Bootcamp.
 
 - $filter=ShipCountry eq 'Germany': Filters the Orders dataset to include only those orders where the ShipCountry is Germany, narrowing down results to orders shipped to this country.
 
-### Retrieve Names and Prices of Products Shipped to Germany
+### Retrieve Names and Prices of Products in Beverages Category
 
 #### Query:
 
-    https://services.odata.org/northwind/northwind.svc/Order_Details?$format=json&$expand=Product&$filter=Order/ShipCountry%20eq%20'Germany'&$select=Product/ProductName,Product/UnitPrice
+    https://services.odata.org/northwind/northwind.svc/Products?$format=json&$select=ProductName,UnitPrice&$expand=Category&$filter=Category/CategoryName%20eq%20'Beverages'
 
 
 #### Explanation:
 
-- $expand=Product: Includes related product information in the response, allowing access to product details like name and price.
-- $filter=Order/ShipCountry eq 'Germany': Filters the Order_Details dataset to include only those orders whose associated ShipCountry is Germany.
-- $select=Product/ProductName,Product/UnitPrice: Restricts the response to include only the ProductName and UnitPrice fields from the related Product entity, minimizing unnecessary data.
+- $format=json: Specifies that the response should be formatted in JSON.
+- $select=ProductName,UnitPrice: Restricts the response to include only the ProductName and UnitPrice fields from the Products entity, minimizing unnecessary data.
+- $expand=Category: Expands the Category navigation property to allow filtering and access to details of the related Category entity.
+- $filter=Category/CategoryName eq 'Beverages': Filters the Products dataset to include only those products whose related CategoryName is "Beverages."
 
 ## Files
 
