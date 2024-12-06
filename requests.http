@@ -1,7 +1,7 @@
 
 ### URL BASE
 @api_base_url=https://services.odata.org/northwind/northwind.svc/
-
+              https://services.odata.org/northwind/northwind.svc/
 ### Return results in json format
 @json_format=$format=json
 
@@ -27,6 +27,6 @@ GET {{api_base_url}}Products?{{json_format}}&$orderby=UnitPrice%20desc&$top=5
 ### Retrieve Orders Shipped to Germany
 GET {{api_base_url}}Orders?{{json_format}}&$filter=ShipCountry%20eq%20'Germany'
 
-### Retrieve Names and Prices of Products Shipped to Germany
-GET {{api_base_url}}Order_Details?{{json_format}}&$expand=Product&$filter=Order/ShipCountry%20eq%20'Germany'&$select=Product/ProductName,Product/UnitPrice
-
+### Retrieve Names and Prices of Products in Beverages Category
+GET {{api_base_url}}Products?{{json_format}}&$select=ProductName,UnitPrice&$expand=Category&$filter=Category/CategoryName eq 'Beverages'
+### GET {{api_base_url}}Products?{{json_format}}&$select=ProductName,UnitPrice&$expand=Category&$filter=Category/CategoryName eq 'Beverages'\n
