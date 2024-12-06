@@ -87,7 +87,7 @@ These exercises are part of the tasks for Week 2 of Globant's SAP CAP Bootcamp.
 
 #### Query:
 
-    GET https://services.odata.org/northwind/northwind.svc/Order_Details?$format=json&$expand=Product&$filter=Order/ShipCountry%20eq%20'Germany'&$select=Product/ProductName,Product/UnitPrice
+    https://services.odata.org/northwind/northwind.svc/Order_Details?$format=json&$expand=Product&$filter=Order/ShipCountry%20eq%20'Germany'&$select=Product/ProductName,Product/UnitPrice
 
 
 ### Explanation:
