@@ -212,7 +212,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://services.odata.org/northwind/northwind.svc/Order_Details?$format=json&$expand=Product&$filter=Order/ShipCountry%20eq%20'Germany'&$select=Product/ProductName,Product/UnitPrice",
+					"raw": "https://services.odata.org/northwind/northwind.svc/Products?$format=json&$select=ProductName,UnitPrice&$expand=Category&$filter=Category/CategoryName%20eq%20'Beverages'",
 					"protocol": "https",
 					"host": [
 						"services",
